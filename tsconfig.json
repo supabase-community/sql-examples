@@ -26,7 +26,8 @@
     "types": [
       "@nuxt/types",
       "@nuxt/content",
-      "@types/node"
+      "@types/node",
+      "unplugin-icons/types/vue",
     ]
   },
   "exclude": [

@@ -1,9 +1,19 @@
 <template>
-  <Tutorial/>
+  <div class="max-w-screen-lg w-full relative">
+    <div class="grid grid-cols-3 gap-x-4 px-4 py-6">
+      <NuxtLink v-for="item in data" :key="item.slug" :to="`/${item.slug}`">
+        <Card :item="item"></Card>
+      </NuxtLink>
+    </div>
+    <NuxtChild></NuxtChild>
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script lang="ts" setup>
+import { useAsync, useContext } from "@nuxtjs/composition-api";
 
-export default Vue.extend({})
+const { $content } = useContext();
+const data = useAsync(() => {
+  return $content("sql").without(["body"]).fetch();
+});
 </script>
