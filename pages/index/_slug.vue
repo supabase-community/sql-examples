@@ -32,14 +32,24 @@
 </template>
 
 <script lang="ts">
-import { useAsync, useContext, defineComponent } from "@nuxtjs/composition-api";
+import { IContentDocument } from "@nuxt/content/types/content";
+import {
+  useAsync,
+  useContext,
+  defineComponent,
+  useRoute,
+  Ref,
+} from "@nuxtjs/composition-api";
 
 export default defineComponent({
   setup() {
+    const route = useRoute();
     const { $content, params } = useContext();
+
     const data = useAsync(() => {
-      return $content("sql").where({ slug: params.slug }).fetch();
-    });
+      return $content("sql").where({ slug: route.value.params.slug }).fetch();
+    }) as Ref<IContentDocument[]>;
+
     return {
       data,
     };

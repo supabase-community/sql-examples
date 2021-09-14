@@ -9,11 +9,18 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { useAsync, useContext } from "@nuxtjs/composition-api";
+<script lang="ts">
+import { defineComponent, useAsync, useContext } from "@nuxtjs/composition-api";
 
-const { $content } = useContext();
-const data = useAsync(() => {
-  return $content("sql").without(["body"]).fetch();
+export default defineComponent({
+  setup() {
+    const { $content } = useContext();
+    const data = useAsync(() => {
+      return $content("sql").without(["body"]).fetch();
+    });
+    return {
+      data,
+    };
+  },
 });
 </script>
