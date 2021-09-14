@@ -62,4 +62,8 @@ export default {
       Inter: [400, 600, 700],
     },
   },
+
+  vite: {
+    build: true,
+  },
 };

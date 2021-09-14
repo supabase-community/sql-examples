@@ -9939,10 +9939,10 @@ unpipe@~1.0.0:
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
-unplugin-icons@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/unplugin-icons/-/unplugin-icons-0.9.0.tgz#7fb0d4a7934748cf02f4faec5eaf5dbbc79f044a"
-  integrity sha512-BbJLvxC83IshbCMdk+1Fl7Sm03l6xe0/iu7bQrbQE0NwEuDkf4NJMnv7rRX0joOzY2hOpzS8O9fMzar06/py4w==
+unplugin-icons@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/unplugin-icons/-/unplugin-icons-0.10.0.tgz#bb82e86c2e587599d52df0f0d07ce307b22f8eae"
+  integrity sha512-whRPcFmE38KoYkifEmJFLA1s67YutQ6Q75CmydqGETqbbUUaJkqNG22qz4gvogn7fFlzV5kmbQogJ7MmOvYdtA==
   dependencies:
     "@iconify/json-tools" "^1.0.10"
     has-pkg "^0.0.1"
