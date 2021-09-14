@@ -1,5 +1,4 @@
 ---
-id: create-table
 title: "Create table"
 description: Basic table template. Change "table_name" to the name you prefer.
 author: supabase

@@ -3,6 +3,7 @@
     class="
       w-screen
       min-h-screen
+      bg-warm-gray-100
       dark:bg-dark-800 dark:text-white
       flex flex-col
       items-center

@@ -1,6 +1,14 @@
 <template>
   <div
-    class="border border-2 border-warm-gray-200 p-4 rounded-lg flex flex-col"
+    class="
+      bg-white
+      shadow-none
+      transition
+      hover:shadow-warm-gray-600 hover:shadow-md
+      p-4
+      rounded-lg
+      flex flex-col
+    "
   >
     <h2 class="font-semibold text-xl">
       {{ item.title }}

@@ -5,6 +5,21 @@
 .nuxt-content-highlight {
   @apply relative;
 }
+.nuxt-content-highlight > pre {
+  @apply rounded-md;
+}
 .nuxt-content-highlight:hover > .copy {
   @apply block;
+}
+
+.prose {
+  & h2 {
+    @apply font-bold text-2xl py-2;
+  }
+  & p {
+    @apply py-2 leading-7;
+  }
+  & p > code {
+    @apply px-2 py-1 w-min bg-warm-gray-200 bg-opacity-50 text-warm-gray-600 rounded-md;
+  }
 }

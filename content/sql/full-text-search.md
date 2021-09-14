@@ -1,5 +1,4 @@
 ---
-id: full-text-search
 title: "Full Text Search"
 description: How to use full text search in PostgreSQL.
 author: zernonia
@@ -17,27 +16,3 @@ create table books (
 );
 ```
 
-logn long
-
-## this testing
-
-```sh
-prism???
-```
-
-```sql
-create table books (
-  id serial primary key,
-  title text,
-  author text,
-  description text
-);
-```
-
-logn long
-
-## this testing
-
-```sh
-prism???
-```

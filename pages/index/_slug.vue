@@ -6,7 +6,7 @@
       fixed
       top-0
       left-0
-      bg-white bg-opacity-50
+      bg-warm-gray-100 bg-opacity-50
       flex
       justify-center
       items-center
@@ -42,7 +42,7 @@
           <p class="text-sm text-warm-gray-700">{{ data[0].description }}</p>
           <div class="h-2px my-3 bg-warm-gray-100 w-full"></div>
         </div>
-        <NuxtContent :document="data[0]"></NuxtContent>
+        <NuxtContent :document="data[0]" class="prose"></NuxtContent>
         <a
           :href="`https://github.com/zernonia/supabase-sql/edit/master/content/sql/${$route.params.slug}.md`"
           target="_blank"
