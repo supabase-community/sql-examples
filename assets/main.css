@@ -1,3 +1,10 @@
 * {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
+
+.nuxt-content-highlight {
+  @apply relative;
+}
+.nuxt-content-highlight:hover > .copy {
+  @apply block;
+}
