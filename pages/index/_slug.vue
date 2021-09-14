@@ -68,12 +68,8 @@ import {
 } from "@nuxtjs/composition-api";
 import Vue from "vue";
 import CopyButton from "~/components/CopyButton.vue";
-import IconEdit from "~icons/mdi/database-edit-outline";
 
 export default defineComponent({
-  components: {
-    IconEdit,
-  },
   setup() {
     const route = useRoute();
     const { $content, params } = useContext();

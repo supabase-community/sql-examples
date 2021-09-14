@@ -26,22 +26,16 @@
       focus:outline-none
     "
   >
-    <IconCopy class="w-5 h-5" v-if="state == 'init'"></IconCopy>
-    <IconCopied class="w-5 h-5" v-else></IconCopied>
+    <IconCopy class="w-6 h-6" v-if="state == 'init'"></IconCopy>
+    <IconCopied class="w-6 h-6" v-else></IconCopied>
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "@nuxtjs/composition-api";
 import Clipboard from "clipboard";
-import IconCopy from "~icons/heroicons-outline/clipboard-copy";
-import IconCopied from "~icons/heroicons-outline/clipboard-check";
 
 export default defineComponent({
-  components: {
-    IconCopy,
-    IconCopied,
-  },
   setup() {
     const state = ref("init");
     const target = ref();

@@ -49,10 +49,10 @@ import { IContentDocument } from "@nuxt/content/types/content";
 import {
   ref,
   useContext,
-  watch,
   defineComponent,
+  watch,
 } from "@nuxtjs/composition-api";
-import { onClickOutside } from "@vueuse/core";
+// import { onClickOutside } from "@vueuse/core";
 
 export default defineComponent({
   setup() {
@@ -62,7 +62,7 @@ export default defineComponent({
     const query = ref("");
     const list = ref<IContentDocument | IContentDocument[]>();
 
-    onClickOutside(target, (event) => (openDropdown.value = false));
+    // onClickOutside(target, (event) => (openDropdown.value = false));
 
     watch(query, async (n) => {
       if (!n) {
@@ -76,6 +76,7 @@ export default defineComponent({
         .search(n)
         .fetch();
     });
+
     return {
       target,
       openDropdown,

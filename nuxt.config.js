@@ -28,7 +28,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     "nuxt-windicss",
-    "unplugin-icons/nuxt",
+    ["unplugin-icons/nuxt"],
     "@nuxtjs/composition-api/module",
     "@nuxtjs/google-fonts",
     "nuxt-vite",
@@ -61,9 +61,5 @@ export default {
     families: {
       Inter: [400, 600, 700],
     },
-  },
-
-  vite: {
-    build: true,
   },
 };
