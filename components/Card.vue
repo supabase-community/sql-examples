@@ -12,13 +12,20 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useAsync, useContext } from "@nuxtjs/composition-api";
+<script lang="ts">
+import { defineComponent, useAsync, useContext } from "@nuxtjs/composition-api";
 
-const p = defineProps({
-  item: {
-    type: Object,
-    required: true,
+export default defineComponent({
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(p) {
+    return {
+      p,
+    };
   },
 });
 </script>

@@ -31,12 +31,18 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useRoute, useAsync, useContext } from "@nuxtjs/composition-api";
+<script lang="ts">
+import { useAsync, useContext, defineComponent } from "@nuxtjs/composition-api";
 
-const route = useRoute();
-const { $content } = useContext();
-const data = useAsync(() => {
-  return $content("sql").where({ slug: route.value.params.slug }).fetch();
+export default defineComponent({
+  setup() {
+    const { $content, params } = useContext();
+    const data = useAsync(() => {
+      return $content("sql").where({ slug: params.slug }).fetch();
+    });
+    return {
+      data,
+    };
+  },
 });
 </script>
