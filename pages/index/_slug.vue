@@ -48,7 +48,7 @@ export default defineComponent({
 
     const data = useAsync(() => {
       return $content("sql").where({ slug: route.value.params.slug }).fetch();
-    }) as Ref<IContentDocument[]>;
+    }, route.value.params.slug) as Ref<IContentDocument[]>;
 
     return {
       data,

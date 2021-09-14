@@ -18,6 +18,7 @@ export default defineComponent({
     const data = useAsync(() => {
       return $content("sql").without(["body"]).fetch();
     });
+
     return {
       data,
     };
