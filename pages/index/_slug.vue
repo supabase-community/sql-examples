@@ -43,10 +43,22 @@
           <div class="h-2px my-3 bg-warm-gray-100 w-full"></div>
         </div>
         <NuxtContent :document="data[0]" class="prose"></NuxtContent>
+        <div v-if="data[0].reference">
+          <div class="h-2px my-3 bg-warm-gray-100 w-full"></div>
+          <h5 class="text-sm">Reference:</h5>
+          <ul class="text-xs text-warm-gray-400">
+            <li v-for="link in data[0].reference">
+              <a :href="link" target="_blank" class="inline-flex items-center">
+                <IconLink class="mr-1"></IconLink>
+                {{ link }}
+              </a>
+            </li>
+          </ul>
+        </div>
         <a
           :href="`https://github.com/zernonia/supabase-sql/edit/master/content/sql/${$route.params.slug}.md`"
           target="_blank"
-          class="inline-flex items-center text-warm-gray-400 mt-2"
+          class="inline-flex items-center text-warm-gray-400 mt-4"
         >
           <IconEdit class="mr-2"></IconEdit>
           <span class="text-sm"> Edit this script </span>

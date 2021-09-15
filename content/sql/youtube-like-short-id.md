@@ -3,6 +3,8 @@ title: "Generate Youtube-like short ID"
 description: Generate YouTube-like short IDs as Postgres Primary Keys.
 author: zernonia
 github: https://github.com/zernonia
+reference:
+  - https://github.com/turbo/pg-shortkey
 ---
 
 ## pg-shortkey
@@ -33,5 +35,3 @@ select * from test;
 SHORTKEYs are truly random, so they fragment the index space just like v4 UUIDs, decreasing performance slightly. But unlike UUID (which provides an instance-local pseudo-sequential type via UUID v1 MC), that behavior can't be changed. This is intentional. SHORTKEYs are supposed to be used for external facing IDs, like in APIs.
 
 There, they prevent enumeration and cardinality evaluation (e.g. how many things are there and what's the next/previous thing - just like YouTube). Use where appropriate.
-
-Origin: [pg-shortkey](https://github.com/turbo/pg-shortkey)

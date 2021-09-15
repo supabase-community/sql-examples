@@ -14,7 +14,14 @@
 
 .prose {
   & h2 {
-    @apply font-bold text-2xl py-2;
+    @apply text-2xl py-2;
+  }
+  & h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
   }
   & p {
     @apply py-2 leading-7;
@@ -22,4 +29,28 @@
   & p > code {
     @apply px-2 py-1 w-min bg-warm-gray-200 bg-opacity-50 text-warm-gray-600 rounded-md;
   }
+  & ul {
+    @apply pl-4 list-disc list-inside;
+  }
+  & ol {
+    @apply m-0 pl-4 list-inside;
+  }
+  & blockquote {
+    @apply m-0 pl-4 border-l-4 border-warm-gray-300 bg-warm-gray-100 rounded-r-md;
+  }
+  & a {
+    @apply underline underline-2 underline-offset-3 underline-warm-gray-200;
+  }
+  & code > *,
+  & code {
+    font-family: "DM Mono";
+    letter-spacing: -0.5px;
+  }
+  & hr {
+    @apply h-2px my-3 bg-warm-gray-100 w-full;
+  }
+}
+
+.token.operator {
+  background: none !important;
 }

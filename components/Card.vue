@@ -6,17 +6,19 @@
       transition
       hover:shadow-warm-gray-600 hover:shadow-md
       p-4
-      rounded-lg
+      h-full
+      rounded-md
       flex flex-col
+      justify-between
     "
   >
-    <h2 class="font-semibold text-xl">
-      {{ item.title }}
-    </h2>
-    <p class="py-3 text-warm-gray-700">{{ item.description }}</p>
-    <a :href="item.github" target="_blank">
-      <Badge>{{ item.author }}</Badge>
-    </a>
+    <div class="flex flex-col">
+      <h2 class="font-semibold text-xl">
+        {{ item.title }}
+      </h2>
+      <p class="py-3 text-warm-gray-700">{{ item.description }}</p>
+    </div>
+    <!-- <Badge>{{ item.author }}</Badge> -->
   </div>
 </template>
 

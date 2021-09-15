@@ -51,7 +51,7 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
-    fullTextSearchFields: ["title"],
+    fullTextSearchFields: ["title", "description"],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -60,6 +60,7 @@ export default {
   googleFonts: {
     families: {
       Inter: [400, 600, 700],
+      "DM Mono": true,
     },
   },
 };

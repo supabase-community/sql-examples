@@ -6,7 +6,7 @@
       autocomplete="off"
       placeholder="Search..."
       class="
-        w-72
+        w-80
         px-4
         py-2
         border-2 border-warm-gray-200
@@ -21,7 +21,7 @@
         absolute
         top-full
         left-0
-        w-72
+        w-80
         bg-white
         mt-1
         py-2
@@ -74,6 +74,7 @@ export default defineComponent({
         .only(["title", "slug", "description"])
         .limit(12)
         .search(n)
+        .sortBy("title")
         .fetch();
     });
 

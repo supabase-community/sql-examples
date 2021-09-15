@@ -19,7 +19,10 @@ export default defineComponent({
   setup() {
     const { $content } = useContext();
     const data = useAsync(() => {
-      return $content("sql").without(["body"]).fetch();
+      return $content("sql", { deep: true })
+        .without(["body"])
+        .sortBy("title")
+        .fetch();
     });
 
     return {

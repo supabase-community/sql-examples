@@ -1,8 +1,10 @@
 ---
 title: "Full Text Search"
 description: How to use full text search in PostgreSQL.
-author: zernonia
-github: https://github.com/zernonia
+author: supabase
+github: https://github.com/supabase
+reference:
+  - https://supabase.io/docs/guides/database/full-text-search
 ---
 
 Postgres has built-in functions to handle `Full Text Search` queries. This is like a "search engine" within Postgres.
@@ -15,4 +17,3 @@ create table books (
   description text
 );
 ```
-
