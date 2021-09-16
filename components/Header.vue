@@ -67,7 +67,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch } from "@nuxtjs/composition-api";
+import { defineComponent, watch, onMounted } from "@nuxtjs/composition-api";
 import { useStorage } from "@vueuse/core";
 
 export default defineComponent({
@@ -77,13 +77,17 @@ export default defineComponent({
     watch(
       darkMode,
       (n) => {
-        if (n) {
-          document.documentElement.className = "dark";
-        } else {
-          document.documentElement.classList.remove("dark");
+        if (process.client) {
+          if (n) {
+            document.documentElement.className = "dark";
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
         }
       },
-      { immediate: true }
+      {
+        immediate: true,
+      }
     );
 
     return {
