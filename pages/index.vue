@@ -20,14 +20,23 @@
         "
       />
     </div>
-    <div>
+
+    <transition name="fade" mode="out-in">
       <transition-group
+        v-if="data && data.length"
         class="grid grid-cols-3 gap-4 px-4 py-6 relative"
         name="list"
         tag="div"
       >
         <NuxtLink
-          class="transition duration-300 max-w-500 block"
+          class="
+            transition
+            duration-300
+            max-w-500
+            block
+            rounded-md
+            focus:outline-transparent focus:ring focus:ring-light-900
+          "
           v-for="item in data"
           :key="item.slug"
           :to="`/${item.slug}`"
@@ -35,7 +44,15 @@
           <Card :item="item"></Card>
         </NuxtLink>
       </transition-group>
-    </div>
+      <div v-else class="pt-16 pb-8 flex flex-col items-center">
+        <NotFound class="text-light-900 dark:text-dark-100"></NotFound>
+        <a class="inline-flex flex-col items-center" href="" target="_blank">
+          <p class="text-2xl font-semibold">No result found</p>
+          <p class="text-lg font-semibold">Submit a request</p>
+        </a>
+      </div>
+    </transition>
+
     <NuxtChild></NuxtChild>
   </div>
 </template>

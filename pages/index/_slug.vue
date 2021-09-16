@@ -95,10 +95,15 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const router = useRouter();
-    const { $content, params } = useContext();
+    const { $content, params, error } = useContext();
 
     const data = useAsync(() => {
-      return $content("sql").where({ slug: route.value.params.slug }).fetch();
+      return $content("sql")
+        .where({ slug: route.value.params.slug })
+        .fetch()
+        .catch((err) => {
+          error({ statusCode: 404, message: "Page not found" });
+        });
     }, route.value.params.slug) as Ref<IContentDocument[]>;
 
     onMounted(() => {

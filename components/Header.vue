@@ -20,6 +20,7 @@
           py-2
           mr-2
           transition
+          focus:outline-transparent focus:ring focus:ring-light-900
         "
       >
         <IconStar class="w-5 h-5 mr-1"></IconStar>
