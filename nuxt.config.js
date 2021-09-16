@@ -51,11 +51,19 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
-    fullTextSearchFields: ["title", "description"],
+    fullTextSearchFields: () => ["title", "description"],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config) {
+      config.module.rules.push({
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
+      });
+    },
+  },
 
   googleFonts: {
     families: {

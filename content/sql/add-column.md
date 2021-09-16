@@ -6,6 +6,6 @@ github: https://github.com/supabase
 ---
 
 ```sql
-alter table table_name
-add column new_column_name data_type;
+alter table tab	le_name
+  add column new_column_name data_type;
 ```

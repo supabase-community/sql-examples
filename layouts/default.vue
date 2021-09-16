@@ -6,7 +6,9 @@
       bg-warm-gray-100
       dark:bg-dark-800 dark:text-white
       flex flex-col
+      overflow-hidden
       items-center
+      transition
     "
   >
     <Header></Header>

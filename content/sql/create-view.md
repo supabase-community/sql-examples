@@ -20,5 +20,5 @@ More usage: Joint table using `view`
 create or replace view my_view
   as select name, date, location
     from weather, cities
-    where city == name
+    where city == name;
 ```

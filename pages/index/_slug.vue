@@ -7,6 +7,7 @@
       top-0
       left-0
       bg-warm-gray-100 bg-opacity-50
+      dark:bg-dark-900 dark:bg-opacity-50
       flex
       justify-center
       items-center
@@ -20,6 +21,7 @@
         max-w-screen-md
         overflow-y-auto
         bg-white
+        dark:bg-dark-400
         p-6
         rounded-xl
         shadow-lg
@@ -39,7 +41,9 @@
               </a>
             </div>
           </div>
-          <p class="text-sm text-warm-gray-700">{{ data[0].description }}</p>
+          <p class="text-sm text-warm-gray-700 dark:text-light-900">
+            {{ data[0].description }}
+          </p>
           <div class="h-2px my-3 bg-warm-gray-100 w-full"></div>
         </div>
         <NuxtContent :document="data[0]" class="prose"></NuxtContent>
@@ -77,13 +81,16 @@ import {
   useRoute,
   Ref,
   onMounted,
+  useRouter,
 } from "@nuxtjs/composition-api";
+import { onKeyStroke } from "@vueuse/core";
 import Vue from "vue";
 import CopyButton from "~/components/CopyButton.vue";
 
 export default defineComponent({
   setup() {
     const route = useRoute();
+    const router = useRouter();
     const { $content, params } = useContext();
 
     const data = useAsync(() => {
@@ -100,7 +107,12 @@ export default defineComponent({
           const component = new copy().$mount();
           block.appendChild(component.$el);
         }
-      }, 100);
+      }, 500);
+    });
+
+    onKeyStroke("Escape", (event) => {
+      event.preventDefault();
+      router.back();
     });
 
     return {

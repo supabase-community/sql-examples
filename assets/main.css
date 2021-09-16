@@ -27,7 +27,7 @@
     @apply py-2 leading-7;
   }
   & p > code {
-    @apply px-2 py-1 w-min bg-warm-gray-200 bg-opacity-50 text-warm-gray-600 rounded-md;
+    @apply px-2 py-1 w-min bg-warm-gray-200 dark:bg-dark-700 bg-opacity-50 text-warm-gray-600 dark:text-light-900 rounded-md;
   }
   & ul {
     @apply pl-4 list-disc list-inside;
@@ -49,8 +49,34 @@
   & hr {
     @apply h-2px my-3 bg-warm-gray-100 w-full;
   }
+  & code[class*="language-"],
+  pre[class*="language-"] {
+    @apply dark:bg-dark-200  dark:text-white dark:text-shadow-none;
+  }
+  & .token.keyword {
+    @apply dark:text-blue-400;
+  }
+  & .token.string {
+    @apply text-yellow-500 dark:text-yellow-300;
+  }
+  & .token.number,
+  .token.operator {
+    @apply dark:text-red-400;
+  }
 }
 
 .token.operator {
   background: none !important;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+}
+.list-leave-active {
+  opacity: 0;
+  position: absolute;
+}
+.list-move {
+  transition: transform 0.8s ease;
 }
