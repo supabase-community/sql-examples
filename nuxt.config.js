@@ -75,7 +75,7 @@ export default {
             src: "https://umami-zernonia.vercel.app/umami.js",
             async: true,
             defer: true,
-            "data-website-id": "81c673bf-cdc5-496a-9b0b-57d6d84e7f60",
+            "data-website-id": "3616ea01-95e5-4770-b4ee-7c15911e941a",
           }
         : {},
     ],
