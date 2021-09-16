@@ -73,7 +73,7 @@ import { useStorage } from "@vueuse/core";
 
 export default defineComponent({
   setup() {
-    const darkMode = useStorage("dark", false);
+    const darkMode = useStorage("dark", true);
 
     watch(
       darkMode,

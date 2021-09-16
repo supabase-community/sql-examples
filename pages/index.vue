@@ -46,7 +46,11 @@
       </transition-group>
       <div v-else class="pt-16 pb-8 flex flex-col items-center">
         <NotFound class="text-light-900 dark:text-dark-100"></NotFound>
-        <a class="inline-flex flex-col items-center" href="" target="_blank">
+        <a
+          class="inline-flex flex-col items-center"
+          href="https://github.com/zernonia/supabase-sql/issues/new?assignees=&labels=&template=feature_request.md&title="
+          target="_blank"
+        >
           <p class="text-2xl font-semibold">No result found</p>
           <p class="text-lg font-semibold">Submit a request</p>
         </a>

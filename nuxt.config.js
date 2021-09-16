@@ -4,14 +4,76 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "supabase-sql",
+    title: "Supabase SQL | Curated list",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Curated list of Supabase SQL script to find Supabase users find the update & relevant script at ease. Fully open-source and free",
+      },
       { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Supabase SQL | Curated list",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Curated list of Supabase SQL script to find Supabase users find the update & relevant script at ease. Fully open-source and free",
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "https://supabase-sql.vercel.app/og.png",
+      },
+      {
+        hid: "twitter:image:alt",
+        name: "twitter:image:alt",
+        content: "Supabase SQL | Curated list",
+      },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Supabase SQL | Curated list",
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "Curated list of Supabase SQL script to find Supabase users find the update & relevant script at ease. Fully open-source and free",
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://supabase-sql.vercel.app/og.png",
+      },
+      {
+        hid: "og:image:secure_url",
+        property: "og:image:secure_url",
+        content: "https://supabase-sql.vercel.app/og.png",
+      },
+      {
+        hid: "og:image:alt",
+        property: "og:image:alt",
+        content: "Supabase SQL | Curated list",
+      },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/icon.svg" }],
+    script: [
+      process.env.NODE_ENV === "production"
+        ? {
+            src: "https://umami-zernonia.vercel.app/umami.js",
+            async: true,
+            defer: true,
+            "data-website-id": "81c673bf-cdc5-496a-9b0b-57d6d84e7f60",
+          }
+        : {},
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -40,12 +102,33 @@ export default {
     "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
+    "@nuxtjs/robots",
+    "@nuxtjs/sitemap",
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       lang: "en",
+    },
+    icon: false,
+  },
+
+  generate: { fallback: "404.html" },
+
+  sitemap: {
+    hostname: "https://supabase-sql.vercel.app",
+    gzip: true,
+    routes: async () => {
+      let routes = [];
+      let sqls = [];
+      const { $content } = require("@nuxt/content");
+      if (sqls === null || sqls.length === 0)
+        sqls = await $content("sql").fetch();
+      for (const sql of sqls) {
+        routes.push(`/${sql.slug}`);
+      }
+      return routes;
     },
   },
 
