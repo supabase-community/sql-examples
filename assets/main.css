@@ -1,7 +1,9 @@
 * {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
-
+html {
+  overflow-x: hidden;
+}
 .nuxt-content-highlight {
   @apply relative;
 }
@@ -27,7 +29,7 @@
     @apply py-2 leading-7;
   }
   & p > code {
-    @apply px-2 py-1 w-min bg-warm-gray-200 dark:bg-dark-700 bg-opacity-50 text-warm-gray-600 dark:text-light-900 rounded-md;
+    @apply px-2 py-1 w-min bg-warm-gray-200 dark:bg-dark-300 bg-opacity-50 text-warm-gray-600 dark:text-light-900 rounded-md;
   }
   & ul {
     @apply pl-4 list-disc list-inside;
@@ -36,7 +38,7 @@
     @apply m-0 pl-4 list-inside;
   }
   & blockquote {
-    @apply m-0 pl-4 border-l-4 border-warm-gray-300 bg-warm-gray-100 rounded-r-md;
+    @apply m-0 pl-4 border-l-4 border-warm-gray-300 bg-warm-gray-100 dark:border-dark-300 dark:bg-dark-600 rounded-r-md;
   }
   & a {
     @apply underline underline-2 underline-offset-3 underline-warm-gray-200;
@@ -60,7 +62,8 @@
     @apply text-yellow-500 dark:text-yellow-300;
   }
   & .token.number,
-  .token.operator {
+  .token.operator,
+  .token.boolean {
     @apply dark:text-red-400;
   }
 }

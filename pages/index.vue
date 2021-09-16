@@ -2,10 +2,11 @@
   <div class="max-w-screen-lg w-full relative flex flex-col items-center">
     <div class="px-4">
       <input
+        ref="target"
         v-model="query"
         type="search"
         autocomplete="off"
-        placeholder="Search..."
+        placeholder="Ctrl + K to search..."
         class="
           w-80
           px-4
@@ -13,7 +14,7 @@
           shadow-md shadow-warm-gray-600
           rounded-md
           transition
-          focus:outline-transparent
+          focus:outline-transparent focus:ring focus:ring-light-900
           bg-white
           dark:bg-dark-400
         "
@@ -47,11 +48,26 @@ import {
   ref,
   watch,
 } from "@nuxtjs/composition-api";
+import { useMagicKeys, whenever } from "@vueuse/core";
 
 export default defineComponent({
   setup() {
     const { $content } = useContext();
     const query = ref("");
+
+    const target = ref();
+    const { Ctrl_K } = useMagicKeys({
+      passive: false,
+      onEventFired(e) {
+        if (e.ctrlKey && e.key === "k" && e.type === "keydown") {
+          e.preventDefault();
+        }
+      },
+    });
+
+    whenever(Ctrl_K, () => {
+      target.value.focus();
+    });
 
     const data = useAsync(() => {
       return $content("sql", { deep: true })
@@ -78,6 +94,7 @@ export default defineComponent({
     return {
       data,
       query,
+      target,
     };
   },
 });

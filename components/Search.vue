@@ -65,7 +65,7 @@ import {
   useRouter,
   useRoute,
 } from "@nuxtjs/composition-api";
-import { onClickOutside, onKeyStroke } from "@vueuse/core";
+import { onClickOutside, onKeyStroke, useMagicKeys } from "@vueuse/core";
 
 export default defineComponent({
   setup() {
@@ -80,6 +80,7 @@ export default defineComponent({
     const list = ref<IContentDocument[]>([]);
 
     onClickOutside(target, (event) => (openDropdown.value = false));
+    const { Ctrl_K } = useMagicKeys();
 
     const keyDown = (event: Event) => {
       event.preventDefault();

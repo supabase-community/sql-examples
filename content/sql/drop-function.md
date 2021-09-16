@@ -1,6 +1,6 @@
 ---
 title: "Drop Function"
-description: Drop function template. Change "fetch_top_10" to the function name you prefer.
+description: Drop function template.
 author: zernonia
 github: https://github.com/zernonia
 ---

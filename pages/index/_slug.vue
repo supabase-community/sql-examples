@@ -44,11 +44,15 @@
           <p class="text-sm text-warm-gray-700 dark:text-light-900">
             {{ data[0].description }}
           </p>
-          <div class="h-2px my-3 bg-warm-gray-100 w-full"></div>
+          <div
+            class="h-2px my-3 bg-warm-gray-100 dark:bg-dark-200 w-full"
+          ></div>
         </div>
         <NuxtContent :document="data[0]" class="prose"></NuxtContent>
         <div v-if="data[0].reference">
-          <div class="h-2px my-3 bg-warm-gray-100 w-full"></div>
+          <div
+            class="h-2px my-3 bg-warm-gray-100 dark:bg-dark-200 w-full"
+          ></div>
           <h5 class="text-sm">Reference:</h5>
           <ul class="text-xs text-warm-gray-400">
             <li v-for="link in data[0].reference">

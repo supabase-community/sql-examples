@@ -1,9 +1,13 @@
 ---
-title: "Create table"
+title: "Create basic table"
 description: Basic table template. Change "table_name" to the name you prefer.
 author: supabase
 github: https://github.com/supabase
 ---
+
+## Basic table
+
+Create simple table with `id` as primary key.
 
 ```sql
 create table table_name (
