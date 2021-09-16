@@ -21,6 +21,11 @@ export default {
         content: "Supabase SQL | Curated list",
       },
       {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
         hid: "twitter:description",
         name: "twitter:description",
         content:
@@ -63,7 +68,7 @@ export default {
         content: "Supabase SQL | Curated list",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/icon.svg" }],
+    link: [{ rel: "icon", type: "image/svg+xml", href: "/icon.svg" }],
     script: [
       process.env.NODE_ENV === "production"
         ? {
