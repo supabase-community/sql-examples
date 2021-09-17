@@ -3,6 +3,7 @@
 }
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .nuxt-content-highlight {
   @apply relative;
@@ -13,7 +14,9 @@ html {
 .nuxt-content-highlight:hover > .copy {
   @apply block;
 }
-
+.modal-open {
+  @apply overflow-hidden;
+}
 .prose {
   & h2 {
     @apply text-2xl py-2;
@@ -87,7 +90,7 @@ html {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 .fade-enter,

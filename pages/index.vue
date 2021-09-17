@@ -3,7 +3,7 @@
     <div class="px-4">
       <input
         ref="target"
-        v-model="query"
+        v-model="state.query"
         type="search"
         autocomplete="off"
         placeholder="Ctrl + K to search..."
@@ -14,7 +14,8 @@
           shadow-md shadow-warm-gray-600
           rounded-md
           transition
-          focus:outline-transparent focus:ring focus:ring-light-900
+          hover:ring hover:ring-light-900
+          focus:outline-transparent focus:ring focus:ring-green-500
           bg-white
           dark:bg-dark-400
         "
@@ -43,7 +44,8 @@
             max-w-500
             block
             rounded-md
-            focus:outline-transparent focus:ring focus:ring-light-900
+            hover:ring hover:ring-light-900
+            focus:outline-transparent focus:ring focus:ring-green-500
           "
           v-for="item in data"
           :key="item.slug"
@@ -78,11 +80,11 @@ import {
   watch,
 } from "@nuxtjs/composition-api";
 import { useMagicKeys, whenever } from "@vueuse/core";
+import { state } from "~/state";
 
 export default defineComponent({
   setup() {
     const { $content } = useContext();
-    const query = ref("");
 
     const target = ref();
     const { Ctrl_K } = useMagicKeys({
@@ -105,24 +107,27 @@ export default defineComponent({
         .fetch();
     });
 
-    watch(query, async (n) => {
-      if (!n) {
-        data.value = await $content("sql", { deep: true })
-          .without(["body"])
+    watch(
+      () => state.query,
+      async (n) => {
+        if (!n) {
+          data.value = await $content("sql", { deep: true })
+            .without(["body"])
+            .sortBy("title")
+            .fetch();
+          return;
+        }
+        data.value = await $content("sql")
+          .only(["title", "slug", "description"])
+          .limit(12)
+          .search(n)
           .sortBy("title")
           .fetch();
-        return;
       }
-      data.value = await $content("sql")
-        .only(["title", "slug", "description"])
-        .limit(12)
-        .search(n)
-        .sortBy("title")
-        .fetch();
-    });
+    );
     return {
       data,
-      query,
+      state,
       target,
     };
   },

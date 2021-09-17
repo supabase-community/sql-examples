@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-4 flex flex-col items-center">
+  <footer class="py-6 flex flex-col items-center">
     <div class="text-sm text-center">
       <a target="_blank" href="https://supabase-schema.vercel.app/"
         >Supabase Schema</a
@@ -15,7 +15,7 @@
         >Made with Supabase</a
       >
     </div>
-    <div>
+    <div class="mt-1">
       built by
       <a target="_blank" href="https://twitter.com/zernonia">@zernonia</a>
     </div>

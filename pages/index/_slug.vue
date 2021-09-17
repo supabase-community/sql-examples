@@ -95,7 +95,9 @@ import {
   useRoute,
   Ref,
   onMounted,
+  onUnmounted,
   useRouter,
+  watch,
 } from "@nuxtjs/composition-api";
 import { onKeyStroke } from "@vueuse/core";
 import Vue from "vue";
@@ -117,6 +119,7 @@ export default defineComponent({
     }, route.value.params.slug) as Ref<IContentDocument[]>;
 
     onMounted(() => {
+      document.documentElement.classList.add("modal-open");
       setTimeout(() => {
         const blocks = document.getElementsByClassName(
           "nuxt-content-highlight"
@@ -129,10 +132,26 @@ export default defineComponent({
       }, 500);
     });
 
+    onUnmounted(() => {
+      document.documentElement.classList.remove("modal-open");
+    });
+
     onKeyStroke("Escape", (event) => {
       event.preventDefault();
       router.back();
     });
+
+    watch(
+      () => route.value.params.slug,
+      async (n) => {
+        data.value = await $content("sql")
+          .where({ slug: n })
+          .fetch()
+          .catch((err) => {
+            error({ statusCode: 404, message: "Page not found" });
+          });
+      }
+    );
 
     return {
       data,

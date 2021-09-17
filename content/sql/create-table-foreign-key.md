@@ -1,6 +1,6 @@
 ---
 title: "Create table with foreign key"
-description: Table with Foreign Key template. Change "table_name" to the name you prefer.
+description: Table with foreign key (fk) template. Change "table_name" to the name you prefer.
 author: zernonia
 github: https://github.com/zernonia
 ---

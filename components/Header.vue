@@ -11,7 +11,10 @@
       justify-between
     "
   >
-    <h1 class="text-4xl font-bold">Supabase SQL</h1>
+    <div class="flex items-center cursor-pointer" @click="state.query = ''">
+      <img class="w-16 h-16 mr-4" src="/icon.svg" alt="Supabase SQL" />
+      <h1 class="text-4xl font-bold">Supabase SQL</h1>
+    </div>
     <div class="flex items-center mt-2 sm:mt-0">
       <a
         href="https://github.com/zernonia/supabase-sql"
@@ -29,7 +32,8 @@
           py-2
           mr-2
           transition
-          focus:outline-transparent focus:ring focus:ring-light-900
+          hover:ring hover:ring-light-900
+          focus:outline-transparent focus:ring focus:ring-green-500
         "
       >
         <IconStar class="w-5 h-5 mr-1"></IconStar>
@@ -79,7 +83,7 @@
 <script lang="ts">
 import { defineComponent, watch, onMounted } from "@nuxtjs/composition-api";
 import { useStorage } from "@vueuse/core";
-
+import { state } from "~/state";
 export default defineComponent({
   setup() {
     const darkMode = useStorage("dark", true);
@@ -101,6 +105,7 @@ export default defineComponent({
     );
 
     return {
+      state,
       darkMode,
     };
   },
