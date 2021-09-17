@@ -9,4 +9,5 @@ github: https://github.com/zernonia
 drop function function_name;
 ```
 
-Find out how to get `function_name` by [listing all function](/list-all-functions)
+<!--
+Find out how to get `function_name` by [listing all function](/list-all-functions) -->

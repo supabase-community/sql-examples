@@ -92,12 +92,12 @@ import {
   useAsync,
   useContext,
   defineComponent,
-  useRoute,
   Ref,
   onMounted,
   onUnmounted,
   useRouter,
   watch,
+  computed,
 } from "@nuxtjs/composition-api";
 import { onKeyStroke } from "@vueuse/core";
 import Vue from "vue";
@@ -105,9 +105,8 @@ import CopyButton from "~/components/CopyButton.vue";
 
 export default defineComponent({
   setup() {
-    const route = useRoute();
     const router = useRouter();
-    const { $content, params, error } = useContext();
+    const { $content, params, error, route } = useContext();
 
     const data = useAsync(() => {
       return $content("sql")
@@ -140,18 +139,6 @@ export default defineComponent({
       event.preventDefault();
       router.back();
     });
-
-    watch(
-      () => route.value.params.slug,
-      async (n) => {
-        data.value = await $content("sql")
-          .where({ slug: n })
-          .fetch()
-          .catch((err) => {
-            error({ statusCode: 404, message: "Page not found" });
-          });
-      }
-    );
 
     return {
       data,

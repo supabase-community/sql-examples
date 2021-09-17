@@ -9,4 +9,5 @@ github: https://github.com/zernonia
 drop policy "trigger name" on profiles;
 ```
 
-Find out how to get `trigger name` by [listing all triggers](/list-all-triggers)
+<!--
+Find out how to get `trigger name` by [listing all triggers](/list-all-triggers) -->
