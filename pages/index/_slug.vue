@@ -96,7 +96,7 @@ import {
   onMounted,
   onUnmounted,
   useRouter,
-  watch,
+  useMeta,
   computed,
 } from "@nuxtjs/composition-api";
 import { onKeyStroke } from "@vueuse/core";
@@ -104,6 +104,7 @@ import Vue from "vue";
 import CopyButton from "~/components/CopyButton.vue";
 
 export default defineComponent({
+  head: {},
   setup() {
     const router = useRouter();
     const { $content, params, error, route } = useContext();
@@ -140,8 +141,30 @@ export default defineComponent({
       router.back();
     });
 
+    // Meta tags
+    const d = computed(() => data.value?.[0]);
+    useMeta(() => ({
+      title: "Supabase SQL | " + d.value?.title,
+      bodyAttrs: {
+        itemtype: `http://schema.org/WebPage`,
+      },
+      meta: [
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: d.value?.title,
+        },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: d.value?.title,
+        },
+      ],
+    }));
+
     return {
       data,
+      d,
     };
   },
 });
