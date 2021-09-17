@@ -15,7 +15,8 @@ html {
   @apply block;
 }
 .modal-open {
-  @apply overflow-hidden;
+  padding-right: var(--scrollbarWidth);
+  @apply overflow-y-hidden;
 }
 .prose {
   & h2 {
