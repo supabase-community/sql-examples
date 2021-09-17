@@ -18,11 +18,12 @@
     <div
       class="
         w-full
-        max-w-screen-md
+        max-w-screen-lg
         overflow-y-auto
         bg-white
         dark:bg-dark-400
         p-6
+        mx-4
         rounded-xl
         shadow-lg
       "
@@ -30,7 +31,16 @@
     >
       <div v-if="data">
         <div>
-          <div class="flex justify-between items-center w-full">
+          <div
+            class="
+              flex
+              <sm:flex-col
+              justify-between
+              <sm:items-baseline
+              sm:items-center
+              w-full
+            "
+          >
             <h2 class="font-semibold text-xl">
               {{ data[0].title }}
             </h2>

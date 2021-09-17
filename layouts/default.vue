@@ -1,12 +1,11 @@
 <template>
   <div
     class="
-      w-screen
+      w-full
       min-h-screen
       bg-warm-gray-100
       dark:bg-dark-800 dark:text-white
       flex flex-col
-      overflow-hidden
       items-center
       transition
     "

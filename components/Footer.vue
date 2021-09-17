@@ -1,6 +1,6 @@
 <template>
   <footer class="py-4 flex flex-col items-center">
-    <div class="text-sm">
+    <div class="text-sm text-center">
       <a target="_blank" href="https://supabase-schema.vercel.app/"
         >Supabase Schema</a
       >

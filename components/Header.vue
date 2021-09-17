@@ -1,9 +1,18 @@
 <template>
   <header
-    class="px-4 py-6 max-w-screen-lg w-full flex items-center justify-between"
+    class="
+      px-4
+      py-6
+      max-w-screen-lg
+      w-full
+      flex flex-row
+      <sm:flex-col
+      items-center
+      justify-between
+    "
   >
     <h1 class="text-4xl font-bold">Supabase SQL</h1>
-    <div class="flex items-center">
+    <div class="flex items-center mt-2 sm:mt-0">
       <a
         href="https://github.com/zernonia/supabase-sql"
         target="_blank"
