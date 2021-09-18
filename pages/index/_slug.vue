@@ -73,14 +73,39 @@
             </li>
           </ul>
         </div>
-        <a
-          :href="`https://github.com/zernonia/supabase-sql/edit/master/content/sql/${$route.params.slug}.md`"
-          target="_blank"
-          class="inline-flex items-center text-warm-gray-400 mt-4"
+        <div
+          class="
+            text-warm-gray-400 text-sm
+            mt-4
+            flex
+            items-center
+            justify-between
+          "
         >
-          <IconEdit class="mr-2"></IconEdit>
-          <span class="text-sm"> Edit this script </span>
-        </a>
+          <a
+            :href="`https://github.com/zernonia/supabase-sql/edit/master/content/sql/${$route.params.slug}.md`"
+            target="_blank"
+            class="inline-flex items-center text-warm-gray-400"
+          >
+            <IconEdit class="mr-2"></IconEdit>
+            <span class=""> Edit this script </span>
+          </a>
+          <span>
+            Updated at
+            {{
+              new Date(data[0].updatedAt).toLocaleString("en-us", {
+                weekday: "short",
+              })
+            }},
+            {{
+              new Date(data[0].updatedAt).toLocaleString("en-us", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })
+            }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
