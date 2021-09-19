@@ -95,6 +95,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     "nuxt-windicss",
+    "@nuxtjs/robots",
     ["unplugin-icons/nuxt"],
     "@nuxtjs/composition-api/module",
     "@nuxtjs/google-fonts",
@@ -134,6 +135,13 @@ export default {
       }
       return routes;
     },
+  },
+
+  robots: {
+    UserAgent: "Googlebot",
+    Allow: "/",
+    UserAgent: "*",
+    Allow: "/",
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
