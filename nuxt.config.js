@@ -9,12 +9,15 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
+        name: "google-site-verification",
+        content: "0fHjXCYubdueQI63delbgFoqfSf_90OQdhwJBW5NxpQ",
+      },
+      {
         hid: "description",
         name: "description",
         content:
           "Curated list of Supabase SQL script to find Supabase users find the update & relevant script at ease. Fully open-source and free",
       },
-      { name: "format-detection", content: "telephone=no" },
       {
         hid: "twitter:title",
         name: "twitter:title",
