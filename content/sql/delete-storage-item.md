@@ -10,6 +10,8 @@ reference:
 The storage schema has bucket and objects table for you to query.
 The following command let you see all the items in the storage, and the table structure:
 
+> Not recommended because this only delete the meta data.
+
 ```sql
 select * from storage.objects
 ```

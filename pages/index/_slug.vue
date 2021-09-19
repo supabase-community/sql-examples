@@ -6,6 +6,7 @@
       fixed
       top-0
       left-0
+      z-10
       bg-warm-gray-100 bg-opacity-50
       dark:bg-dark-900 dark:bg-opacity-50
       flex
