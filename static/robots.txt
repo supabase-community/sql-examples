@@ -1,4 +1,0 @@
-Sitemap: https://supabase-sql.vercel.app/sitemap.xml
-
-User-agent: *
-Allow: /*
