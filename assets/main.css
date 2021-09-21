@@ -32,7 +32,8 @@ html {
   & p {
     @apply py-2 leading-7;
   }
-  & p > code {
+  & p > code,
+  & li > code {
     @apply px-2 py-1 w-min bg-warm-gray-200 dark:bg-dark-300 bg-opacity-50 text-warm-gray-600 dark:text-light-900 rounded-md;
   }
   & ul {

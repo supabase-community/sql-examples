@@ -1,6 +1,7 @@
 <template>
   <div
     class="
+      relative
       bg-white
       dark:bg-dark-400
       shadow-md shadow-warm-gray-600
@@ -21,7 +22,12 @@
         {{ item.description }}
       </p>
     </div>
-    <!-- <Badge>{{ item.author }}</Badge> -->
+    <!-- <div
+      class="bottom-0 right-0 absolute"
+      v-if="checkNew(item.createdAt, item.updatedAt)"
+    >
+      new
+    </div> -->
   </div>
 </template>
 
@@ -35,9 +41,20 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(p) {
+  setup() {
+    const checkNew = (createdAt: string, updatedAt: string) => {
+      const localeCreatedAt = new Date(createdAt).toLocaleDateString();
+      const localeUpdatedAt = new Date(updatedAt).toLocaleDateString();
+
+      if (localeCreatedAt == localeUpdatedAt) {
+        return true;
+      } else {
+        false;
+      }
+    };
+
     return {
-      p,
+      checkNew,
     };
   },
 });
