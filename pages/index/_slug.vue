@@ -171,19 +171,56 @@ export default defineComponent({
     const d = computed(() => data.value?.[0]);
     useMeta(() => ({
       title: "Supabase SQL | " + d.value?.title,
-      bodyAttrs: {
-        itemtype: `http://schema.org/WebPage`,
-      },
       meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Curated list of Supabase SQL - " + d.value?.description,
+        },
         {
           hid: "twitter:title",
           name: "twitter:title",
-          content: d.value?.title,
+          content: "Supabase SQL | " + d.value?.title,
+        },
+        {
+          hid: "twitter:description",
+          name: "twitter:description",
+          content: "Curated list of Supabase SQL - " + d.value?.description,
+        },
+        {
+          hid: "twitter:image",
+          name: "twitter:image",
+          content: `https://social-saas.vercel.app/api/template/ADT6U4eJvEg?title=${d.value?.title}&description=${d.value?.description}`,
+        },
+        {
+          hid: "twitter:image:alt",
+          name: "twitter:image:alt",
+          content: "Curated list of Supabase SQL - " + d.value?.description,
         },
         {
           hid: "og:title",
-          name: "og:title",
-          content: d.value?.title,
+          property: "og:title",
+          content: "Supabase SQL | " + d.value?.title,
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: "Curated list of Supabase SQL - " + d.value?.description,
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: `https://social-saas.vercel.app/api/template/ADT6U4eJvEg?title=${d.value?.title}&description=${d.value?.description}`,
+        },
+        {
+          hid: "og:image:secure_url",
+          property: "og:image:secure_url",
+          content: `https://social-saas.vercel.app/api/template/ADT6U4eJvEg?title=${d.value?.title}&description=${d.value?.description}`,
+        },
+        {
+          hid: "og:image:alt",
+          property: "og:image:alt",
+          content: "Curated list of Supabase SQL - " + d.value?.description,
         },
       ],
     }));
