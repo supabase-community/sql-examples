@@ -17,7 +17,7 @@
     </div>
     <div class="flex items-center mt-2 sm:mt-0">
       <a
-        href="https://github.com/zernonia/supabase-sql"
+        href="https://github.com/supabase-community/supabase-sql"
         target="_blank"
         class="
           inline-flex
