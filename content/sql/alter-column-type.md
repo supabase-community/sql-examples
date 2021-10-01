@@ -7,5 +7,5 @@ github: https://github.com/mihaiandrei97
 
 ```sql
 alter table table_name
-    alter COLUMN column_name type new_data_type;
+    alter column column_name type new_data_type;
 ```
