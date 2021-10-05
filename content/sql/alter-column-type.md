@@ -9,7 +9,7 @@ github: https://github.com/mihaiandrei97
 alter table table_name
     alter column column_name type new_data_type;
 
--- assuming the table name is "todos", and a int4 column "page_count"
+-- assuming the table name is "todos", and a column "page_count" with type int
 -- this will set the "page_count" type to "text"
 
 alter table todos
