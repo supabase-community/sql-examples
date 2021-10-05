@@ -8,4 +8,10 @@ github: https://github.com/mihaiandrei97
 ```sql
 alter table table_name
     alter column column_name type new_data_type;
+
+-- assuming the table name is "todos", and a int4 column "page_count"
+-- this will set the "page_count" type to "text"
+
+alter table todos
+    alter column page_count type text;
 ```
