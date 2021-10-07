@@ -5,7 +5,7 @@ author: lucasmrl
 github: https://github.com/lucasmrl/
 ---
 
-## Aggregate Functions
+## Basic Aggregate Functions
 
 `max()`
 ```sql
