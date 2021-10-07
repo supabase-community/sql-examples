@@ -1,5 +1,5 @@
 ---
-title: Aggregate Functions
+title: Basic Aggregrate Functions
 description: Set of functions to perform calculation on a set of values. The return is a single summary value. (Except for "round()")
 author: lucasmrl
 github: https://github.com/lucasmrl/
