@@ -156,6 +156,7 @@ export default {
   },
 
   googleFonts: {
+    display: 'swap',
     families: {
       Inter: [400, 600, 700],
       "DM Mono": true,
