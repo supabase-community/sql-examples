@@ -47,7 +47,7 @@
             </h2>
             <div class="flex items-center">
               <span class="text-sm mr-2">by:</span>
-              <a :href="data[0].github" target="_blank">
+              <a :href="data[0].github" rel="noreferrer" target="_blank">
                 <Badge>{{ data[0].author }}</Badge>
               </a>
             </div>
@@ -66,8 +66,13 @@
           ></div>
           <h5 class="text-sm">Reference:</h5>
           <ul class="text-xs text-warm-gray-400">
-            <li v-for="link in data[0].reference">
-              <a :href="link" target="_blank" class="inline-flex items-center">
+            <li v-for="link in data[0].reference" :key="link">
+              <a
+                :href="link"
+                rel="noreferrer"
+                target="_blank"
+                class="inline-flex items-center"
+              >
                 <IconLink class="mr-1"></IconLink>
                 {{ link }}
               </a>
@@ -85,6 +90,7 @@
         >
           <a
             :href="`https://github.com/zernonia/supabase-sql/edit/master/content/sql/${$route.params.slug}.md`"
+            rel="noreferrer"
             target="_blank"
             class="inline-flex items-center text-warm-gray-400"
           >

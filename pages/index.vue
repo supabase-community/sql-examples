@@ -59,6 +59,7 @@
         <a
           class="inline-flex flex-col items-center"
           href="https://github.com/zernonia/supabase-sql/issues/new?assignees=&labels=&template=feature_request.md&title="
+          rel="noreferrer"
           target="_blank"
         >
           <p class="text-2xl font-semibold">No result found</p>
