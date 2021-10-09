@@ -11,7 +11,7 @@
     Simple Curated <strong><a href="https://supabase.io/">Supabase</a> SQL</strong>
     <br />
     <br />
-    <a href="https://supabase-sql.vercel.app/">View Demo</a>
+    <a href="https://database.dev/">View Demo</a>
     ·
     <a href="https://github.com/supabase-community/supabase-sql/issues">Report Bug</a>
     ·
@@ -32,11 +32,11 @@
 <a href="https://github.com/supabase-community/supabase-sql/pulls" target="blank">
 <img src="https://img.shields.io/github/issues-pr/supabase-community/supabase-sql?style=flat-square" alt="supabase sql pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=Check%20out%20supabase-sql.vercel.app%20SQL%20by%20@zernonia.%20Curated%20list%20of%20Supabase%E2%9A%A1%20SQL%20to%20help%20you%20find%20the%20script%20you%20need!"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fzernonia%2Fsupabase-sql"></a>
+<a href="https://twitter.com/intent/tweet?text=Check%20out%20database.dev%20SQL%20by%20@zernonia.%20Curated%20list%20of%20Supabase%E2%9A%A1%20SQL%20to%20help%20you%20find%20the%20script%20you%20need!"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fzernonia%2Fsupabase-sql"></a>
 
 </p>
 
-[![Supabase SQL](static/splash.png)](https://supabase-sql.vercel.app/)
+[![Supabase SQL](static/splash.png)](https://database.dev/)
 
 ## 🚀 Features
 
