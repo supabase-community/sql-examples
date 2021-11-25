@@ -6,7 +6,7 @@ github: https://github.com/zernonia
 ---
 
 ```sql
-drop policy "trigger name" on profiles;
+drop trigger "trigger name" on profiles;
 ```
 
 <!--
