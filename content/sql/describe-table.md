@@ -1,6 +1,6 @@
 ---
-title: "Describe Table"
-description: Template to descibe a Table.
+title: "Get columns info of a table"
+description: Template to describe a table.
 author: Kathirvel Chandrasekaran
 github: https://github.com/KathirvelChandrasekaran
 ---
