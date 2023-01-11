@@ -23,6 +23,7 @@ So, in your postgres function, maybe you can do this in case of an exception.
 delete from storage.objects where bucket_id = 'products' and name = 'testing.png'
 ```
 
-If you afraid this only remove the entry from the table, and doesn't actually free up the Storage space, you can check Storage space at Home, before insert image, after insert the image, finally after the query that remove the image.
+If you afraid this only remove the entry from the table, and doesn't actually free up the Storage space, 
+you are correct. This method is **not recommended**, see 
+https://github.com/supabase/supabase/discussions/3124#discussioncomment-1397058 .
 
-You will see the Storage space is the same as before inserting the image.
