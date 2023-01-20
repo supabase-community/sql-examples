@@ -98,6 +98,12 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
+# 🔥 Contributors
+
+<a href="https://github.com/supabase-community/database.dev/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=supabase-community/database.dev" />
+</a>
+
 # Built by
 
 Zernonia - [@zernonia](https://twitter.com/zernonia)
